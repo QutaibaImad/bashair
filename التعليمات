@@ -1,0 +1,7 @@
+if you wanna change the email that brings you to the admin panel ,
+
+
+1- go to    lib / auth / loginScreen /go to line 114 and change the email 
+
+
+2- go to    lib / screens / welcomeScreen /go to line 44 and change the email 

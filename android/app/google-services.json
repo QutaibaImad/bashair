@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1017548709119",
+    "project_id": "bashair-17414",
+    "storage_bucket": "bashair-17414.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017548709119:android:6e71d15f623f096bafc0ca",
+        "android_client_info": {
+          "package_name": "com.example.bashair_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD00P6H-jvApkG8EjGaBSYY3WCHd_i0p84"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
