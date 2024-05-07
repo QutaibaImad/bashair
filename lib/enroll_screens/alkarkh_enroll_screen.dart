@@ -11,6 +11,7 @@ import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path/path.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:signature_kit/signature_kit.dart';
 
 class AlkarkhEnrollScreen extends StatefulWidget {
@@ -323,6 +324,7 @@ class _AlkarkhEnrollScreenState extends State<AlkarkhEnrollScreen> {
       });
     }
 
+    String? name;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -335,12 +337,20 @@ class _AlkarkhEnrollScreenState extends State<AlkarkhEnrollScreen> {
         ),
         centerTitle: true,
         actions: [
-          Padding(
-            padding: const EdgeInsets.only(left: 10),
-            child: Image.asset(
-              'assets/images/Vector.png',
-              height: 19,
-              width: 22,
+          InkWell(
+            onTap: () async {
+              SharedPreferences sharedPreferences =
+                  await SharedPreferences.getInstance();
+              sharedPreferences.setString(
+                  nameController.text, nameController.text);
+            },
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10),
+              child: Image.asset(
+                'assets/images/Vector.png',
+                height: 19,
+                width: 22,
+              ),
             ),
           ),
         ],

@@ -7,6 +7,7 @@ import 'package:bashair_project/screens/welcome_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class CustomDrawer extends StatelessWidget {
   final String documentId;
@@ -15,6 +16,9 @@ class CustomDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Uri url =
+        Uri.parse('https://sites.google.com/view/codecraftersn/home');
+
     final credential = FirebaseAuth.instance.currentUser;
     CollectionReference users = FirebaseFirestore.instance.collection('users');
 
@@ -256,8 +260,27 @@ class CustomDrawer extends StatelessWidget {
                         ),
                       ]),
                     ),
+                    InkWell(
+                      onTap: () {
+                        launchUrl(url);
+                      },
+                      child: Row(children: [
+                        Padding(
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 15, vertical: 12),
+                            child: Icon(Icons.edit_document)),
+                        Text(
+                          'سياسة الخصوصية',
+                          style: TextStyle(
+                              color: Color(0xFF000000),
+                              fontWeight: FontWeight.w700,
+                              fontSize: 15,
+                              fontFamily: 'rFont'),
+                        ),
+                      ]),
+                    ),
                     SizedBox(
-                      height: 180,
+                      height: 100,
                     ),
                     Text(
                       'الإصدار 0.01',
